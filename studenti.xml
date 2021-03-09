@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entitati>
+<student ID="1">
+<Nume>Ana</Nume>
+<Grupa>221</Grupa>
+</student>
+<student ID="100">
+<Nume>Leo</Nume>
+<Grupa>935</Grupa>
+</student>
+<student ID="2">
+<Nume>Maria</Nume>
+<Grupa>222</Grupa>
+</student>
+<student ID="4">
+<Nume>Ion</Nume>
+<Grupa>227</Grupa>
+</student>
+<student ID="5">
+<Nume>George</Nume>
+<Grupa>935</Grupa>
+</student>
+<student ID="6fe674e8-88f5-4c55-94d6-017b04a00e79">
+<Nume>Leo</Nume>
+<Grupa>935</Grupa>
+</student>
+<student ID="c8b5ef50-b3a1-4a7e-9eb3-a54c7b3c969d">
+<Nume>Leo</Nume>
+<Grupa>935</Grupa>
+</student>
+</Entitati>
