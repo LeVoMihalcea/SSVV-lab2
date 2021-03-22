@@ -39,8 +39,6 @@ public class AppTest
         Service service = new Service(fileRepository1, null, null);
 
         assertEquals(1, service.saveStudent(String.valueOf(UUID.randomUUID()), "Leo", 935));
-
-
     }
 
     @Test
