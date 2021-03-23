@@ -24,6 +24,10 @@
 <Nume>Leo</Nume>
 <Grupa>935</Grupa>
 </student>
+<student ID="6dd4f634-a873-4d52-89dc-8feb43685f22">
+<Nume>Leo</Nume>
+<Grupa>935</Grupa>
+</student>
 <student ID="e32ddbe2-bf7d-4f47-99b4-21eb32e82480">
 <Nume>Leo</Nume>
 <Grupa>935</Grupa>
@@ -43,6 +47,10 @@
 <student ID="0000000000000">
 <Nume>Andrei</Nume>
 <Grupa>666</Grupa>
+</student>
+<student ID="3d94554f-b6f4-4bc3-bd1c-ab4a84207714">
+<Nume>Leo</Nume>
+<Grupa>935</Grupa>
 </student>
 <student ID="4">
 <Nume>Ion</Nume>

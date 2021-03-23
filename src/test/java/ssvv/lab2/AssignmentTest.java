@@ -1,9 +1,16 @@
 package ssvv.lab2;
 
+import org.junit.Before;
 import org.junit.Test;
+import ssvv.lab2.domain.Nota;
+import ssvv.lab2.domain.Student;
 import ssvv.lab2.domain.Tema;
+import ssvv.lab2.repository.NotaXMLRepository;
+import ssvv.lab2.repository.StudentXMLRepository;
 import ssvv.lab2.repository.TemaXMLRepository;
 import ssvv.lab2.service.Service;
+import ssvv.lab2.validation.NotaValidator;
+import ssvv.lab2.validation.StudentValidator;
 import ssvv.lab2.validation.TemaValidator;
 import ssvv.lab2.validation.Validator;
 
@@ -11,6 +18,15 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class AssignmentTest {
+    private Validator<Student> studentValidator;
+    private Validator<Tema> temaValidator;
+    private Validator<Nota> notaValidator;
+
+    private StudentXMLRepository fileRepository1;
+    private TemaXMLRepository fileRepository2 ;
+    private NotaXMLRepository fileRepository3;
+
+    private Service service;
 
     @Test
     public void shouldAnswerWithTrue()
@@ -18,21 +34,26 @@ public class AssignmentTest {
         assertTrue( true );
     }
 
-    @Test
-    public void assignmentAddedSuccessfully(){
-        Validator<Tema> temaValidator = new TemaValidator();
-        TemaXMLRepository fileRepository1 = new TemaXMLRepository(temaValidator, "teme.xml");
-        Service service = new Service(null, fileRepository1, null);
+    @Before
+    public void load(){
+        studentValidator = new StudentValidator();
+        temaValidator = new TemaValidator();
+        notaValidator = new NotaValidator();
 
-        assertEquals(0, service.saveTema("tema_01", "o descriere cumsecade", 8, 7));
+        fileRepository1 = new StudentXMLRepository(studentValidator, "studenti.xml");
+        fileRepository2 = new TemaXMLRepository(temaValidator, "teme.xml");
+        fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
+
+        service = new Service(fileRepository1, fileRepository2, fileRepository3);
     }
 
     @Test
-    public void addAssignmentDeadlineLowerThanStartLine(){
-        Validator<Tema> temaValidator = new TemaValidator();
-        TemaXMLRepository fileRepository1 = new TemaXMLRepository(temaValidator, "teme.xml");
-        Service service = new Service(null, fileRepository1, null);
+    public void testAddValidAssignment() {
+        assertEquals(0, service.saveTema("tema_05", "o descriere cumsecade", 8, 7));
+    }
 
-        assertEquals(1, service.saveTema("tema_01", "o descriere cumsecade", 6, 7));
+    @Test
+    public void testAddAssignmentWithDeadlineEarlierThanStartline() {
+        assertEquals(1, service.saveTema("tema_06", "o descriere cumsecade", 4, 5));
     }
 }

@@ -1,13 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Entitati>
-    <tema ID="2">
-        <Descriere>XML</Descriere>
-        <Deadline>8</Deadline>
-        <Startline>7</Startline>
-    </tema>
-    <tema ID="3">
-        <Descriere>gui</Descriere>
-        <Deadline>9</Deadline>
-        <Startline>7</Startline>
-    </tema>
+<tema ID="1">
+<Descriere>Test Description</Descriere>
+<Deadline>5</Deadline>
+<Startline>4</Startline>
+</tema>
+<tema ID="2">
+<Descriere>XML</Descriere>
+<Deadline>8</Deadline>
+<Startline>7</Startline>
+</tema>
+<tema ID="tema_01">
+<Descriere>o descriere cumsecade</Descriere>
+<Deadline>8</Deadline>
+<Startline>7</Startline>
+</tema>
+<tema ID="3">
+<Descriere>gui</Descriere>
+<Deadline>9</Deadline>
+<Startline>7</Startline>
+</tema>
+<tema ID="tema_05">
+<Descriere>o descriere cumsecade</Descriere>
+<Deadline>8</Deadline>
+<Startline>7</Startline>
+</tema>
+<tema ID="10000">
+<Descriere>Test Description</Descriere>
+<Deadline>5</Deadline>
+<Startline>4</Startline>
+</tema>
 </Entitati>
