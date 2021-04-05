@@ -66,26 +66,26 @@ public class AssignmentTest {
 
     @Test
     public void testAddAssignmentBlackPath() {
-        assertEquals(0, service.saveTema(String.valueOf(UUID.randomUUID()), "black", 5, 4));
+        assertEquals(1, service.saveTema(String.valueOf(UUID.randomUUID()), "black", 5, 4));
     }
 
     @Test
     public void testAddAssignmentBluePath() {
-        assertEquals(0, service.saveTema(null, "blue", 5, 4));
+        assertEquals(1, service.saveTema(null, "blue", 5, 4));
     }
 
     @Test
     public void testAddAssignmentGreenPath() {
-        assertEquals(0, service.saveTema("tema_06", "green", 0, 4));
+        assertEquals(1, service.saveTema("tema_06", "green", 0, 4));
     }
 
     @Test
     public void testAddAssignmentPurplePath() {
-        assertEquals(0, service.saveTema("tema_06", "purple", 5, 0));
+        assertEquals(1, service.saveTema("tema_06", "purple", 5, 0));
     }
 
     @Test
     public void testAddAssignmentYellowPath() {
-        assertEquals(0, service.saveTema("tema_06", null, 5, 4));
+        assertEquals(1, service.saveTema("tema_06", null, 5, 4));
     }
 }
