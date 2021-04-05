@@ -14,6 +14,8 @@ import ssvv.lab2.validation.StudentValidator;
 import ssvv.lab2.validation.TemaValidator;
 import ssvv.lab2.validation.Validator;
 
+import java.util.UUID;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -55,5 +57,35 @@ public class AssignmentTest {
     @Test
     public void testAddAssignmentWithDeadlineEarlierThanStartline() {
         assertEquals(1, service.saveTema("tema_06", "o descriere cumsecade", 4, 5));
+    }
+
+    @Test
+    public void testAddAssignmentRedPath() {
+        assertEquals(0, service.saveTema("tema_05", "red", 5, 4));
+    }
+
+    @Test
+    public void testAddAssignmentBlackPath() {
+        assertEquals(0, service.saveTema(String.valueOf(UUID.randomUUID()), "black", 5, 4));
+    }
+
+    @Test
+    public void testAddAssignmentBluePath() {
+        assertEquals(0, service.saveTema(null, "blue", 5, 4));
+    }
+
+    @Test
+    public void testAddAssignmentGreenPath() {
+        assertEquals(0, service.saveTema("tema_06", "green", 0, 4));
+    }
+
+    @Test
+    public void testAddAssignmentPurplePath() {
+        assertEquals(0, service.saveTema("tema_06", "purple", 5, 0));
+    }
+
+    @Test
+    public void testAddAssignmentYellowPath() {
+        assertEquals(0, service.saveTema("tema_06", null, 5, 4));
     }
 }
