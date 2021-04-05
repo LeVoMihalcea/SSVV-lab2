@@ -60,32 +60,32 @@ public class AssignmentTest {
     }
 
     @Test
-    public void testAddAssignmentRedPath() {
+    public void testAddAssignmentValid_redPath() {
         assertEquals(0, service.saveTema("tema_05", "red", 5, 4));
     }
 
     @Test
-    public void testAddAssignmentBlackPath() {
+    public void testAddCompletlyNewAssignment_blackPath() {
         assertEquals(1, service.saveTema(String.valueOf(UUID.randomUUID()), "black", 5, 4));
     }
 
     @Test
-    public void testAddAssignmentBluePath() {
+    public void testAddAssignmentWithNullId_bluePath() {
         assertEquals(1, service.saveTema(null, "blue", 5, 4));
     }
 
     @Test
-    public void testAddAssignmentGreenPath() {
+    public void testAddAssignmentWithInvalidDeadline_greenPath() {
         assertEquals(1, service.saveTema("tema_06", "green", 0, 4));
     }
 
     @Test
-    public void testAddAssignmentPurplePath() {
+    public void testAddAssignmentWithInvalidStartline_purplePath() {
         assertEquals(1, service.saveTema("tema_06", "purple", 5, 0));
     }
 
     @Test
-    public void testAddAssignmentYellowPath() {
+    public void testAddAssignmentWithNullDescription_yellowPath() {
         assertEquals(1, service.saveTema("tema_06", null, 5, 4));
     }
 }
