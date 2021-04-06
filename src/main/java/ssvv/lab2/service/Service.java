@@ -59,6 +59,8 @@ public class Service {
 
             if (predata - deadline > 2) {
                 valNota =  1;
+            } else if (predata - deadline <= 0) {
+                valNota = valNota;
             } else {
                 valNota =  valNota - 2.5 * (predata - deadline);
             }
